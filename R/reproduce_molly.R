@@ -31,7 +31,8 @@ beta_list <- list(
   seq(.9, .1, length.out = 10),
   seq(.9, .1, length.out = 20),
   seq(.9, .1, length.out = 50),
-  seq(.9, .1, length.out = 1e2)
+  seq(.9, .1, length.out = 1e2),
+  seq(.9, .1, length.out = 5e2)
 )
 for (beta in beta_list) {
   sigma_w <- 1
@@ -55,7 +56,7 @@ for (beta in beta_list) {
   panel1 <- ggarrange(plotlist = gg_ls)
   ggpubr::ggexport(
     gg_ls,
-    filename = paste("./order_", length(beta), ".pdf", sep = ''),
+    filename = paste("./order_", length(beta), ".pdf", sep = ""),
     width = 5,
     height = 5
   )
